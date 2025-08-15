@@ -39,7 +39,7 @@ export default function Navbar() {
       <div style={navContentStyle}>
         {/* Logo */}
         <Link to="/" style={logoStyle}>
-          MyLogo
+          Bilal's Website
         </Link>
 
         {/* Navbar Links */}
