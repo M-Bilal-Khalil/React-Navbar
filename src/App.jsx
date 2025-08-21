@@ -1,26 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
-import AboutUs from "./pages/AboutUs";
-import NotFound from "./pages/NotFound";
+import { useState } from "react";
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import Services from "./components/Services/Services";
+import Contact from "./components/Contact/Contact";
+import About from "./components/About/About";
+import "./App.css"
+
 
 function App() {
+  const [currentPage, setCurrentPage] = useState ("home");
+
   return (
-    <Router>
-      <Navbar />
-      <div style={{ padding: "20px" }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+    <>
+    <Header setCurrentPage={setCurrentPage} />
+    <div className="app-content">
+    {currentPage === "home" && <Home />}
+    {currentPage === "services" && <Services />}
+    {currentPage === "contact" && <Contact />}
+    {currentPage === "about" && <About />}
+    </div>
+    </>
+  )
+
 }
 
 export default App;

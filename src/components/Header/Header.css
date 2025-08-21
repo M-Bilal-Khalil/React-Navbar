@@ -1,0 +1,18 @@
+.header-container {
+    padding: 20px;
+    background: gray;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header-nav li {
+    cursor: pointer;
+}
